@@ -74,38 +74,41 @@ session_start();
 
 </head>
 
-<body class="hold-transition sidebar-collapse sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed login-page">
-  <?php
-  if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
-    echo'<div class="wrapper">';
-      include 'modules/navbar.php';
-      include 'modules/sidebar.php';
-      if(isset($_GET["ruta"])){
+<body class="hold-transition sidebar-collapse sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
 
-        if($_GET["ruta"] == "dashboard" ||
-           $_GET["ruta"] == "user"||
-           $_GET["ruta"] == "product"||
-           $_GET["ruta"] == "logOut"){
-          include "modules/".$_GET["ruta"].".php";
+    <?php
+    if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+      echo'<div class="wrapper">';
+        include 'modules/navbar.php';
+        include 'modules/sidebar.php';
+        if(isset($_GET["ruta"])){
+
+          if($_GET["ruta"] == "dashboard" ||
+            $_GET["ruta"] == "user"||
+            $_GET["ruta"] == "product"||
+            $_GET["ruta"] == "logOut"){
+            include "modules/".$_GET["ruta"].".php";
+          }else{
+            include "modules/404.php";
+          }
         }else{
-          include "modules/404.php";
+          include "modules/dashboard.php";
         }
-      }else{
-        include "modules/dashboard.php";
-      }
-     
-      include 'modules/footer.php';
-    echo'</div>';
-  }else{
-    include "modules/login.php";
-  }
-  ?>
-  
+      
+        include 'modules/footer.php';
+      echo'</div>';
+    }else{
+      include "modules/login.php";
+    }
+    ?>
+  </div>
+  <!-- ./wrapper -->  
   
 
   
  
-  <script src="views/js/template.js"></script>
-  <script src="views/js/user.js"></script>
+<script src="views/js/template.js"></script>
+<script src="views/js/user.js"></script>
 </body>
 </html>
