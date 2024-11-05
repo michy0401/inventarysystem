@@ -8,13 +8,14 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inventory System</title>
-  <link rel="icon" href="views/dist/img/pill.png">
+  <title>Membership Admin</title>
+  <link rel="icon" href="views/dist/img/logo.png">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="views/plugins/fontawesome-free/css/all.min.css">
+  
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="views/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
@@ -74,7 +75,7 @@ session_start();
 
 </head>
 
-<body class="hold-transition sidebar-collapse sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
 
     <?php
